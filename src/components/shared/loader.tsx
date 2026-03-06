@@ -37,40 +37,35 @@ export function Loader({
 
   const variants = {
     default: (
-      <div
-        className={cn(
-          "relative flex items-center justify-center",
-          sizeClasses[size],
-        )}
-      >
-        <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 blur-xl animate-pulse"></div>
+      <div className={cn("relative flex items-center justify-center", sizeClasses[size])}>
+        <div className="absolute inset-0 animate-pulse rounded-xl bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 blur-xl"></div>
 
-        <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 animate-spin blur-sm"></div>
+        <div className="absolute inset-0 animate-spin rounded-xl bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 blur-sm"></div>
 
-        <div className="absolute inset-1 bg-gray-900 rounded-lg flex items-center justify-center overflow-hidden shadow-2xl">
-          <div className="flex gap-1 items-center">
+        <div className="absolute inset-1 flex items-center justify-center overflow-hidden rounded-lg bg-gray-900 shadow-2xl">
+          <div className="flex items-center gap-1">
             {[0, 1, 2, 3].map((i) => (
               <div
                 key={i}
                 className={cn(
-                  "w-1.5 rounded-full animate-bounce",
+                  "w-1.5 animate-bounce rounded-full",
                   i === 0 && "h-8 bg-cyan-500",
-                  i === 1 && "h-10 bg-blue-500 animation-delay-100",
-                  i === 2 && "h-12 bg-indigo-500 animation-delay-200",
-                  i === 3 && "h-8 bg-purple-500 animation-delay-300",
+                  i === 1 && "animation-delay-100 h-10 bg-blue-500",
+                  i === 2 && "animation-delay-200 h-12 bg-indigo-500",
+                  i === 3 && "animation-delay-300 h-8 bg-purple-500",
                 )}
                 style={{ animationDelay: `${i * 0.15}s` }}
               />
             ))}
           </div>
 
-          <div className="absolute inset-0 bg-gradient-to-t from-transparent via-white/10 to-transparent animate-pulse"></div>
+          <div className="absolute inset-0 animate-pulse bg-gradient-to-t from-transparent via-white/10 to-transparent"></div>
         </div>
 
-        <div className="absolute -top-1 -left-1 w-2 h-2 bg-cyan-500 rounded-full animate-ping" />
-        <div className="absolute -top-1 -right-1 w-2 h-2 bg-purple-500 rounded-full animate-ping animation-delay-150" />
-        <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-blue-500 rounded-full animate-ping animation-delay-300" />
-        <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-indigo-500 rounded-full animate-ping animation-delay-450" />
+        <div className="absolute -top-1 -left-1 h-2 w-2 animate-ping rounded-full bg-cyan-500" />
+        <div className="animation-delay-150 absolute -top-1 -right-1 h-2 w-2 animate-ping rounded-full bg-purple-500" />
+        <div className="animation-delay-300 absolute -bottom-1 -left-1 h-2 w-2 animate-ping rounded-full bg-blue-500" />
+        <div className="animation-delay-450 absolute -right-1 -bottom-1 h-2 w-2 animate-ping rounded-full bg-indigo-500" />
       </div>
     ),
 
@@ -78,21 +73,21 @@ export function Loader({
       <div className="flex flex-col items-center gap-3">
         <div className={cn("relative", sizeClasses[size])}>
           <div className="absolute inset-0 rounded-full border-4 border-gray-200/30 dark:border-gray-700/30"></div>
-          <div className="absolute inset-0 rounded-full border-4 border-blue-500 border-t-transparent animate-spin"></div>
+          <div className="absolute inset-0 animate-spin rounded-full border-4 border-blue-500 border-t-transparent"></div>
         </div>
       </div>
     ),
 
     dots: (
-      <div className="flex gap-3 items-center justify-center">
+      <div className="flex items-center justify-center gap-3">
         {[0, 1, 2].map((i) => (
           <div
             key={i}
             className={cn(
-              "rounded-full bg-gradient-to-br from-blue-400 to-blue-600 animate-bounce shadow-lg",
-              size === "sm" && "w-2 h-2",
-              size === "md" && "w-3 h-3",
-              size === "lg" && "w-4 h-4",
+              "animate-bounce rounded-full bg-gradient-to-br from-blue-400 to-blue-600 shadow-lg",
+              size === "sm" && "h-2 w-2",
+              size === "md" && "h-3 w-3",
+              size === "lg" && "h-4 w-4",
             )}
             style={{ animationDelay: `${i * 0.15}s` }}
           />
@@ -104,10 +99,10 @@ export function Loader({
       <div className="flex flex-col items-center gap-3">
         <div
           className={cn(
-            "rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 animate-pulse shadow-xl",
-            size === "sm" && "w-8 h-8",
-            size === "md" && "w-12 h-12",
-            size === "lg" && "w-16 h-16",
+            "animate-pulse rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 shadow-xl",
+            size === "sm" && "h-8 w-8",
+            size === "md" && "h-12 w-12",
+            size === "lg" && "h-16 w-16",
           )}
         />
       </div>
@@ -115,22 +110,10 @@ export function Loader({
   };
 
   const content = (
-    <div
-      className={cn(
-        "flex flex-col items-center justify-center gap-4",
-        className,
-      )}
-    >
+    <div className={cn("flex flex-col items-center justify-center gap-4", className)}>
       {variants[variant]}
       {text && variant !== "dots" && (
-        <p
-          className={cn(
-            "text-white font-medium animate-pulse drop-shadow-lg",
-            textSizes[size],
-          )}
-        >
-          {text}
-        </p>
+        <p className={cn("animate-pulse font-medium text-white drop-shadow-lg", textSizes[size])}>{text}</p>
       )}
     </div>
   );
@@ -176,21 +159,13 @@ export function LoadingOverlay({
     <div className="relative">
       <div
         className={cn(
-          "absolute inset-0 z-40 flex items-center justify-center backdrop-blur-sm rounded-lg",
+          "absolute inset-0 z-40 flex items-center justify-center rounded-lg backdrop-blur-sm",
           overlayClasses[overlayOpacity],
         )}
       >
-        <Loader
-          fullScreen={false}
-          text={text}
-          variant={variant}
-          size="md"
-          overlayOpacity={overlayOpacity}
-        />
+        <Loader fullScreen={false} text={text} variant={variant} size="md" overlayOpacity={overlayOpacity} />
       </div>
-      <div className="opacity-30 pointer-events-none blur-[1px] select-none">
-        {children}
-      </div>
+      <div className="pointer-events-none opacity-30 blur-[1px] select-none">{children}</div>
     </div>
   );
 }

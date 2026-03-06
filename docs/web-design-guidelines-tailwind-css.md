@@ -3,7 +3,7 @@ name: web-design-guidelines
 description: Review UI code for Web Interface Guidelines compliance with Tailwind CSS best practices. Use when asked to "review my UI", "check accessibility", "audit design", "review UX", "check my site against best practices", or "review my Tailwind code". Checks for semantic HTML, accessibility, responsive design, Tailwind CSS usage correctness, and visual design quality.
 metadata:
   author: vercel
-  version: '2.0.0'
+  version: "2.0.0"
   argument-hint: <file-or-pattern>
 ---
 
@@ -334,40 +334,24 @@ light: {
 ```html
 <!-- Top Nav -->
 <header
-  class="sticky top-0 z-40 h-14 flex items-center px-4
-               bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md
-               border-b border-zinc-100 dark:border-zinc-800"
+  class="sticky top-0 z-40 flex h-14 items-center border-b border-zinc-100 bg-white/90 px-4 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/90"
 >
   <button
-    class="w-10 h-10 flex items-center justify-center
-                 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800
-                 active:scale-95 transition-all"
+    class="flex h-10 w-10 items-center justify-center rounded-full transition-all hover:bg-zinc-100 active:scale-95 dark:hover:bg-zinc-800"
   >
     <!-- back icon -->
   </button>
-  <h1
-    class="flex-1 text-center text-[17px] font-semibold
-             text-zinc-900 dark:text-zinc-50 truncate px-2"
-  >
-    Page Title
-  </h1>
-  <div class="w-10 h-10"></div>
+  <h1 class="flex-1 truncate px-2 text-center text-[17px] font-semibold text-zinc-900 dark:text-zinc-50">Page Title</h1>
+  <div class="h-10 w-10"></div>
   <!-- balance spacer -->
 </header>
 
 <!-- Bottom Tab Bar -->
 <nav
-  class="fixed bottom-0 inset-x-0 z-40 h-16 pb-safe
-            flex items-center justify-around
-            bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md
-            border-t border-zinc-100 dark:border-zinc-800"
+  class="pb-safe fixed inset-x-0 bottom-0 z-40 flex h-16 items-center justify-around border-t border-zinc-100 bg-white/90 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-900/90"
 >
   <button
-    class="flex flex-col items-center justify-center gap-0.5
-                 min-w-11 min-h-11 px-3
-                 text-zinc-400 dark:text-zinc-500
-                 hover:text-accent active:scale-95 transition-all
-                 aria-[current=page]:text-accent"
+    class="hover:text-accent aria-[current=page]:text-accent flex min-h-11 min-w-11 flex-col items-center justify-center gap-0.5 px-3 text-zinc-400 transition-all active:scale-95 dark:text-zinc-500"
   >
     <!-- icon + label -->
   </button>
@@ -378,40 +362,20 @@ light: {
 
 ```html
 <!-- Standard card -->
-<div
-  class="rounded-2xl bg-white dark:bg-zinc-900
-            border border-zinc-100 dark:border-zinc-800
-            shadow-sm p-4"
-></div>
+<div class="rounded-2xl border border-zinc-100 bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"></div>
 
 <!-- Elevated card -->
-<div
-  class="rounded-3xl bg-white dark:bg-zinc-900
-            shadow-xl p-5"
-></div>
+<div class="rounded-3xl bg-white p-5 shadow-xl dark:bg-zinc-900"></div>
 
 <!-- Glass card -->
-<div
-  class="rounded-2xl bg-white/10 backdrop-blur-md
-            border border-white/20 p-4"
-></div>
+<div class="rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur-md"></div>
 ```
 
 ### Primary CTA Button
 
 ```html
 <button
-  class="w-full h-13 rounded-2xl
-               bg-zinc-900 dark:bg-zinc-50
-               text-white dark:text-zinc-900
-               text-base font-semibold
-               flex items-center justify-center gap-2
-               hover:bg-zinc-800 dark:hover:bg-zinc-200
-               active:scale-[0.97]
-               disabled:opacity-50 disabled:cursor-not-allowed
-               focus-visible:outline-none focus-visible:ring-2
-               focus-visible:ring-zinc-900 focus-visible:ring-offset-2
-               transition-all duration-150"
+  class="flex h-13 w-full items-center justify-center gap-2 rounded-2xl bg-zinc-900 text-base font-semibold text-white transition-all duration-150 hover:bg-zinc-800 focus-visible:ring-2 focus-visible:ring-zinc-900 focus-visible:ring-offset-2 focus-visible:outline-none active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-50 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
 >
   Button Label
 </button>
@@ -428,16 +392,9 @@ light: {
     inputmode="email"
     autocomplete="email"
     placeholder="you@example.com"
-    class="h-12 w-full rounded-xl px-4
-                bg-zinc-50 dark:bg-zinc-800
-                border border-zinc-200 dark:border-zinc-700
-                text-base text-zinc-900 dark:text-zinc-50
-                placeholder:text-zinc-400
-                focus:outline-none focus:ring-2
-                focus:ring-indigo-500 focus:border-transparent
-                transition-all duration-150"
+    class="h-12 w-full rounded-xl border border-zinc-200 bg-zinc-50 px-4 text-base text-zinc-900 transition-all duration-150 placeholder:text-zinc-400 focus:border-transparent focus:ring-2 focus:ring-indigo-500 focus:outline-none dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-50"
   />
-  <p class="mt-1 text-sm text-red-500 hidden" role="alert">Error message here</p>
+  <p class="mt-1 hidden text-sm text-red-500" role="alert">Error message here</p>
 </div>
 ```
 
@@ -594,43 +551,29 @@ Ready-to-use Tailwind patterns that work on both desktop and mobile without modi
 
 ```html
 <nav
-  class="sticky top-0 z-40 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md
-            border-b border-zinc-100 dark:border-zinc-800"
+  class="sticky top-0 z-40 border-b border-zinc-100 bg-white/90 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/90"
 >
-  <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-14 md:h-16">
+  <div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+    <div class="flex h-14 items-center justify-between md:h-16">
       <!-- Logo -->
-      <a
-        href="/"
-        class="text-lg font-bold text-zinc-900 dark:text-zinc-50
-                         hover:opacity-80 transition-opacity"
-      >
+      <a href="/" class="text-lg font-bold text-zinc-900 transition-opacity hover:opacity-80 dark:text-zinc-50">
         Brand
       </a>
 
       <!-- Desktop links (hidden on mobile) -->
-      <div class="hidden md:flex items-center gap-6">
+      <div class="hidden items-center gap-6 md:flex">
         <a
           href="#"
-          class="text-sm font-medium text-zinc-600 dark:text-zinc-400
-                           hover:text-zinc-900 dark:hover:text-zinc-50
-                           focus-visible:outline-none focus-visible:ring-2
-                           focus-visible:ring-indigo-500 rounded
-                           transition-colors"
+          class="rounded text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:outline-none dark:text-zinc-400 dark:hover:text-zinc-50"
         >
           Link
         </a>
       </div>
 
       <!-- Desktop CTA (hidden on mobile) -->
-      <div class="hidden md:flex items-center gap-3">
+      <div class="hidden items-center gap-3 md:flex">
         <button
-          class="h-9 px-4 rounded-lg bg-zinc-900 dark:bg-zinc-50
-                       text-white dark:text-zinc-900 text-sm font-medium
-                       hover:bg-zinc-700 active:scale-95
-                       focus-visible:outline-none focus-visible:ring-2
-                       focus-visible:ring-zinc-900 focus-visible:ring-offset-2
-                       transition-all"
+          class="h-9 rounded-lg bg-zinc-900 px-4 text-sm font-medium text-white transition-all hover:bg-zinc-700 focus-visible:ring-2 focus-visible:ring-zinc-900 focus-visible:ring-offset-2 focus-visible:outline-none active:scale-95 dark:bg-zinc-50 dark:text-zinc-900"
         >
           Get Started
         </button>
@@ -638,11 +581,7 @@ Ready-to-use Tailwind patterns that work on both desktop and mobile without modi
 
       <!-- Mobile hamburger (hidden on desktop) -->
       <button
-        class="md:hidden w-10 h-10 flex items-center justify-center
-                     rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800
-                     active:scale-95 transition-all
-                     focus-visible:outline-none focus-visible:ring-2
-                     focus-visible:ring-zinc-900"
+        class="flex h-10 w-10 items-center justify-center rounded-lg transition-all hover:bg-zinc-100 focus-visible:ring-2 focus-visible:ring-zinc-900 focus-visible:outline-none active:scale-95 md:hidden dark:hover:bg-zinc-800"
         aria-label="Open menu"
         aria-expanded="false"
       >
@@ -656,53 +595,27 @@ Ready-to-use Tailwind patterns that work on both desktop and mobile without modi
 ### Responsive Hero Section
 
 ```html
-<section
-  class="relative overflow-hidden
-                py-16 md:py-24 lg:py-32
-                px-4 md:px-6 lg:px-8"
->
-  <div class="max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+<section class="relative overflow-hidden px-4 py-16 md:px-6 md:py-24 lg:px-8 lg:py-32">
+  <div class="mx-auto max-w-7xl">
+    <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
       <!-- Text column -->
       <div class="text-center lg:text-left">
         <h1
-          class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl
-                   font-black tracking-tight leading-none
-                   text-zinc-900 dark:text-zinc-50 text-balance"
+          class="text-4xl leading-none font-black tracking-tight text-balance text-zinc-900 md:text-5xl lg:text-6xl xl:text-7xl dark:text-zinc-50"
         >
           Headline Text
         </h1>
-        <p
-          class="mt-6 text-lg md:text-xl text-zinc-600 dark:text-zinc-400
-                  leading-relaxed max-w-xl mx-auto lg:mx-0"
-        >
+        <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-zinc-600 md:text-xl lg:mx-0 dark:text-zinc-400">
           Supporting copy goes here.
         </p>
-        <div
-          class="mt-8 flex flex-col sm:flex-row gap-3
-                    justify-center lg:justify-start"
-        >
+        <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
           <button
-            class="h-12 md:h-13 px-6 rounded-xl md:rounded-2xl
-                         bg-zinc-900 dark:bg-zinc-50
-                         text-white dark:text-zinc-900
-                         text-base font-semibold
-                         hover:bg-zinc-700 active:scale-[0.97]
-                         focus-visible:outline-none focus-visible:ring-2
-                         focus-visible:ring-zinc-900 focus-visible:ring-offset-2
-                         transition-all duration-150"
+            class="h-12 rounded-xl bg-zinc-900 px-6 text-base font-semibold text-white transition-all duration-150 hover:bg-zinc-700 focus-visible:ring-2 focus-visible:ring-zinc-900 focus-visible:ring-offset-2 focus-visible:outline-none active:scale-[0.97] md:h-13 md:rounded-2xl dark:bg-zinc-50 dark:text-zinc-900"
           >
             Primary CTA
           </button>
           <button
-            class="h-12 md:h-13 px-6 rounded-xl md:rounded-2xl
-                         border-2 border-zinc-200 dark:border-zinc-700
-                         text-zinc-900 dark:text-zinc-50
-                         text-base font-semibold
-                         hover:border-zinc-400 active:scale-[0.97]
-                         focus-visible:outline-none focus-visible:ring-2
-                         focus-visible:ring-zinc-900 focus-visible:ring-offset-2
-                         transition-all duration-150"
+            class="h-12 rounded-xl border-2 border-zinc-200 px-6 text-base font-semibold text-zinc-900 transition-all duration-150 hover:border-zinc-400 focus-visible:ring-2 focus-visible:ring-zinc-900 focus-visible:ring-offset-2 focus-visible:outline-none active:scale-[0.97] md:h-13 md:rounded-2xl dark:border-zinc-700 dark:text-zinc-50"
           >
             Secondary CTA
           </button>
@@ -711,10 +624,9 @@ Ready-to-use Tailwind patterns that work on both desktop and mobile without modi
 
       <!-- Visual column -->
       <div
-        class="relative w-full aspect-square md:aspect-[4/3] lg:aspect-square
-                  rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-800"
+        class="relative aspect-square w-full overflow-hidden rounded-3xl bg-zinc-100 md:aspect-[4/3] lg:aspect-square dark:bg-zinc-800"
       >
-        <img src="..." alt="Hero visual" class="w-full h-full object-cover" loading="eager" />
+        <img src="..." alt="Hero visual" class="h-full w-full object-cover" loading="eager" />
       </div>
     </div>
   </div>
@@ -726,48 +638,30 @@ Ready-to-use Tailwind patterns that work on both desktop and mobile without modi
 ```html
 <!-- 1 col mobile → 2 col tablet → 3 col desktop → 4 col wide -->
 <div
-  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4
-            gap-3 md:gap-4 lg:gap-6
-            px-4 md:px-6 lg:px-8 max-w-7xl mx-auto"
+  class="mx-auto grid max-w-7xl grid-cols-1 gap-3 px-4 sm:grid-cols-2 md:gap-4 md:px-6 lg:grid-cols-3 lg:gap-6 lg:px-8 xl:grid-cols-4"
 >
   <!-- Card -->
   <article
-    class="group rounded-2xl bg-white dark:bg-zinc-900
-                  border border-zinc-100 dark:border-zinc-800
-                  shadow-sm md:hover:shadow-lg
-                  md:hover:-translate-y-1
-                  overflow-hidden transition-all duration-300"
+    class="group overflow-hidden rounded-2xl border border-zinc-100 bg-white shadow-sm transition-all duration-300 md:hover:-translate-y-1 md:hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900"
   >
     <!-- Image -->
     <div class="aspect-video w-full overflow-hidden bg-zinc-100 dark:bg-zinc-800">
       <img
         src="..."
         alt=""
-        class="w-full h-full object-cover
-                  md:group-hover:scale-105 transition-transform duration-500"
+        class="h-full w-full object-cover transition-transform duration-500 md:group-hover:scale-105"
         loading="lazy"
       />
     </div>
     <!-- Content -->
     <div class="p-4 md:p-5">
-      <span
-        class="text-xs font-semibold tracking-wider uppercase
-                   text-indigo-600 dark:text-indigo-400"
-      >
+      <span class="text-xs font-semibold tracking-wider text-indigo-600 uppercase dark:text-indigo-400">
         Category
       </span>
-      <h3
-        class="mt-1.5 text-base md:text-lg font-semibold
-                 text-zinc-900 dark:text-zinc-50 leading-snug line-clamp-2"
-      >
+      <h3 class="mt-1.5 line-clamp-2 text-base leading-snug font-semibold text-zinc-900 md:text-lg dark:text-zinc-50">
         Card Title
       </h3>
-      <p
-        class="mt-2 text-sm text-zinc-500 dark:text-zinc-400
-                leading-relaxed line-clamp-2"
-      >
-        Card description text.
-      </p>
+      <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">Card description text.</p>
     </div>
   </article>
 </div>
@@ -777,31 +671,21 @@ Ready-to-use Tailwind patterns that work on both desktop and mobile without modi
 
 ```html
 <!-- Overlay -->
-<div
-  class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm
-            flex items-end md:items-center justify-center
-            p-0 md:p-4"
->
+<div class="fixed inset-0 z-50 flex items-end justify-center bg-black/50 p-0 backdrop-blur-sm md:items-center md:p-4">
   <!-- Panel: bottom sheet on mobile, centered dialog on desktop -->
   <div
-    class="w-full md:max-w-lg
-              rounded-t-3xl md:rounded-3xl
-              bg-white dark:bg-zinc-900
-              shadow-2xl
-              max-h-[90dvh] overflow-y-auto"
+    class="max-h-[90dvh] w-full overflow-y-auto rounded-t-3xl bg-white shadow-2xl md:max-w-lg md:rounded-3xl dark:bg-zinc-900"
   >
     <!-- Drag handle (mobile only) -->
-    <div class="md:hidden flex justify-center pt-3 pb-1">
-      <div class="w-10 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-600"></div>
+    <div class="flex justify-center pt-3 pb-1 md:hidden">
+      <div class="h-1.5 w-10 rounded-full bg-zinc-300 dark:bg-zinc-600"></div>
     </div>
 
     <!-- Header -->
     <div class="flex items-center justify-between px-5 pt-4 pb-3 md:pt-5">
       <h2 class="text-lg font-semibold text-zinc-900 dark:text-zinc-50">Modal Title</h2>
       <button
-        class="w-8 h-8 flex items-center justify-center rounded-full
-                     hover:bg-zinc-100 dark:hover:bg-zinc-800
-                     active:scale-95 transition-all text-zinc-500"
+        class="flex h-8 w-8 items-center justify-center rounded-full text-zinc-500 transition-all hover:bg-zinc-100 active:scale-95 dark:hover:bg-zinc-800"
         aria-label="Close"
       >
         ✕
@@ -809,32 +693,21 @@ Ready-to-use Tailwind patterns that work on both desktop and mobile without modi
     </div>
 
     <!-- Body -->
-    <div
-      class="px-5 pb-5 md:pb-6 text-sm text-zinc-600 dark:text-zinc-400
-                leading-relaxed"
-    >
+    <div class="px-5 pb-5 text-sm leading-relaxed text-zinc-600 md:pb-6 dark:text-zinc-400">
       Modal content goes here.
     </div>
 
     <!-- Footer -->
     <div
-      class="px-5 pb-5 pb-safe md:pb-6 flex flex-col sm:flex-row gap-3
-                border-t border-zinc-100 dark:border-zinc-800 pt-4"
+      class="pb-safe flex flex-col gap-3 border-t border-zinc-100 px-5 pt-4 pb-5 sm:flex-row md:pb-6 dark:border-zinc-800"
     >
       <button
-        class="w-full sm:w-auto sm:flex-1 h-11 rounded-xl
-                     bg-zinc-900 dark:bg-zinc-50
-                     text-white dark:text-zinc-900 text-sm font-semibold
-                     hover:bg-zinc-700 active:scale-[0.97] transition-all"
+        class="h-11 w-full rounded-xl bg-zinc-900 text-sm font-semibold text-white transition-all hover:bg-zinc-700 active:scale-[0.97] sm:w-auto sm:flex-1 dark:bg-zinc-50 dark:text-zinc-900"
       >
         Confirm
       </button>
       <button
-        class="w-full sm:w-auto sm:flex-1 h-11 rounded-xl
-                     border border-zinc-200 dark:border-zinc-700
-                     text-zinc-700 dark:text-zinc-300 text-sm font-medium
-                     hover:bg-zinc-50 dark:hover:bg-zinc-800
-                     active:scale-[0.97] transition-all"
+        class="h-11 w-full rounded-xl border border-zinc-200 text-sm font-medium text-zinc-700 transition-all hover:bg-zinc-50 active:scale-[0.97] sm:w-auto sm:flex-1 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800"
       >
         Cancel
       </button>
@@ -850,29 +723,16 @@ Ready-to-use Tailwind patterns that work on both desktop and mobile without modi
   <!-- Sidebar: drawer on mobile, fixed column on desktop -->
   <aside
     id="sidebar"
-    class="fixed inset-y-0 left-0 z-50 w-72
-                bg-white dark:bg-zinc-900
-                border-r border-zinc-100 dark:border-zinc-800
-                transform -translate-x-full
-                lg:relative lg:translate-x-0 lg:flex lg:flex-col
-                transition-transform duration-300 ease-out
-                overflow-y-auto"
+    class="fixed inset-y-0 left-0 z-50 w-72 -translate-x-full transform overflow-y-auto border-r border-zinc-100 bg-white transition-transform duration-300 ease-out lg:relative lg:flex lg:translate-x-0 lg:flex-col dark:border-zinc-800 dark:bg-zinc-900"
   >
     <!-- Sidebar content -->
   </aside>
 
   <!-- Overlay (mobile only) -->
-  <div
-    id="sidebar-overlay"
-    class="fixed inset-0 z-40 bg-black/50 lg:hidden hidden"
-    aria-hidden="true"
-  ></div>
+  <div id="sidebar-overlay" class="fixed inset-0 z-40 hidden bg-black/50 lg:hidden" aria-hidden="true"></div>
 
   <!-- Main content -->
-  <div
-    class="flex-1 flex flex-col min-w-0
-              px-4 md:px-6 lg:px-8 py-6"
-  >
+  <div class="flex min-w-0 flex-1 flex-col px-4 py-6 md:px-6 lg:px-8">
     <!-- Page content -->
   </div>
 </div>
@@ -882,33 +742,20 @@ Ready-to-use Tailwind patterns that work on both desktop and mobile without modi
 
 ```html
 <!-- Mobile: horizontal scroll. Desktop: full table -->
-<div
-  class="w-full overflow-x-auto rounded-2xl
-            border border-zinc-100 dark:border-zinc-800"
->
+<div class="w-full overflow-x-auto rounded-2xl border border-zinc-100 dark:border-zinc-800">
   <table class="min-w-full divide-y divide-zinc-100 dark:divide-zinc-800">
     <thead class="bg-zinc-50 dark:bg-zinc-900/50">
       <tr>
         <th
-          class="px-4 md:px-6 py-3 text-left text-xs font-semibold
-                   text-zinc-500 dark:text-zinc-400 uppercase tracking-wider
-                   whitespace-nowrap"
+          class="px-4 py-3 text-left text-xs font-semibold tracking-wider whitespace-nowrap text-zinc-500 uppercase md:px-6 dark:text-zinc-400"
         >
           Column
         </th>
       </tr>
     </thead>
-    <tbody
-      class="bg-white dark:bg-zinc-900
-                  divide-y divide-zinc-50 dark:divide-zinc-800/50"
-    >
-      <tr class="hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-colors">
-        <td
-          class="px-4 md:px-6 py-3 md:py-4 text-sm text-zinc-900
-                   dark:text-zinc-100 whitespace-nowrap"
-        >
-          Cell data
-        </td>
+    <tbody class="divide-y divide-zinc-50 bg-white dark:divide-zinc-800/50 dark:bg-zinc-900">
+      <tr class="transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-800/50">
+        <td class="px-4 py-3 text-sm whitespace-nowrap text-zinc-900 md:px-6 md:py-4 dark:text-zinc-100">Cell data</td>
       </tr>
     </tbody>
   </table>

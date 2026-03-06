@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 
 export function useMediaQuery(query: string): boolean {
@@ -8,7 +7,7 @@ export function useMediaQuery(query: string): boolean {
     if (typeof window === "undefined") return;
 
     const mediaQueryList = window.matchMedia(query);
-     
+
     setMatches(mediaQueryList.matches);
 
     const handleChange = (event: MediaQueryListEvent) => {
