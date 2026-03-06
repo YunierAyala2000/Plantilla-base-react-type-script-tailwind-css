@@ -62,29 +62,29 @@ function App() {
 
           {/* Botones +/- */}
           <div className="flex items-center justify-center gap-5 px-8 pb-6">
-            <button
+            <Button
               onClick={() => setCount((c) => c - 1)}
               aria-label="Disminuir"
               className="flex h-14 w-14 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/70 shadow-md transition-all duration-150 hover:border-rose-400/40 hover:bg-rose-500/20 hover:text-rose-300 active:scale-95"
             >
               <Minus className="h-5 w-5" />
-            </button>
+            </Button>
 
-            <button
+            <Button
               onClick={() => setCount(0)}
               aria-label="Resetear"
               className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/40 transition-all duration-150 hover:bg-white/10 hover:text-white/70 active:scale-95"
             >
               <RotateCcw className="h-4 w-4" />
-            </button>
+            </Button>
 
-            <button
+            <Button
               onClick={() => setCount((c) => c + 1)}
               aria-label="Aumentar"
               className="flex h-14 w-14 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/70 shadow-md transition-all duration-150 hover:border-emerald-400/40 hover:bg-emerald-500/20 hover:text-emerald-300 active:scale-95"
             >
               <Plus className="h-5 w-5" />
-            </button>
+            </Button>
           </div>
 
           {/* Botón resetear grande */}
